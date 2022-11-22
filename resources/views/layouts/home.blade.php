@@ -14,6 +14,78 @@
     <title>TodoApp</title>
 </head>
 <body>
-    A
+    <div class="container">
+        <div class="sidebar">
+            logo
+        </div>
+        <div class="content">
+            <nav>
+                <a href=""class="btn btn-primary">
+                    Criar Tarefa
+                </a>
+            </nav>
+
+            <main>
+                <section class="graph">
+                    <div class="graph_header">
+                        <h2>Progresso do dia</h2>
+                        <hr class="LinhaHeader">
+                        Data
+                    </div>
+                    <div class="graph_header-subtitle">
+                        Tarefas: <b>3/6</b>
+                    </div>
+
+                    <div class="graph-placeholder">
+
+                    </div>
+
+                    <p class="graph_header-task_left">Restam 3 tarefas para serem realizadas</p>
+                </section>
+
+                <section class="list">
+                    <div class="list_header">
+
+                        <select class="list_header-select">
+                            <option value="1">Todas as tarefas</option>
+                        </select>
+
+                    </div>
+
+                    <div class="task_list">
+                        <div class="task">
+
+                            <div class="title">
+                                <input type="checkbox" name="" id="" />
+                                <div class="task_title"> Titulo da Tarefa </div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div> Titulo da Tarefa </div>
+                            </div>
+                            <div class="actions">
+                                editar - excluir
+                            </div>
+                        </div>
+
+                        <div class="task">
+
+                            <div class="title">
+                                <input type="checkbox" name="" id="" />
+                                <div class="task_title"> Titulo da Tarefa </div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div> Titulo da Tarefa </div>
+                            </div>
+                            <div class="actions">
+                                editar - excluir
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
