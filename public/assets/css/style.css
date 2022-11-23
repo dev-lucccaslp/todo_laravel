@@ -31,6 +31,15 @@ body {
 .sidebar {
     width: 100px;
     background-color: var(--color-primary);
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+}
+
+.sidebar img {
+    max-width: 100%;
+    height: 10%;
 }
 
 nav{
@@ -48,6 +57,12 @@ nav{
 .btn{
     padding: 20px 30px;
     border-radius: 10px;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 a.btn{
@@ -62,28 +77,47 @@ a.btn{
 
 main{
     display: flex;
-    padding: 20px;
+    padding: 0;
 
 }
 
 section.graph {
     width: 33%;
     height: 100%;
+
+    padding: 20px 20px 0  20px;
 }
 
 .graph_header {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+
+    align-items: center ;
 }
 
 h2{
-    flex: 1;
+    flex: 2;
+    font-size: 18px;
     display: inline-block;
+
 }
 
-hr.LinhaHeader{
-    width: 130px;
+.graph_header-line{
+    flex: 1;
+    width: 100px;
+    background-color: rgba(0, 0, 0, .2);
+
+    height: 2px;
+}
+
+.graph_header-date{
+   flex: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   font-size: 10px;
 }
 
 .graph_header-subtitle {
@@ -93,19 +127,24 @@ hr.LinhaHeader{
 .graph-placeholder {
     width: 300px;
     height: 300px;
-    background-color: aqua;
 
-    margin-top: 20px;
+    background: url('../images/graph.png');
+    background-size: contain;
+
+    margin-top: 50px;
     margin-left: 50px;
 }
 
-.graph_header-task_left {
-    text-align: center;
-    margin-top: 10px;
+.tasks_left_footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .list {
-   padding: 5px 15px;
+   padding: 20px 20px 0 20px;
 
    flex: 1;
 }
@@ -115,7 +154,12 @@ hr.LinhaHeader{
 }
 
 .list_header-select {
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+    font-size: 18px;
 
+    color: var(--text-dark);
 }
 
 .task_list{
@@ -126,9 +170,8 @@ hr.LinhaHeader{
     margin-top: 20px;
 }
 
-.task{
+.task {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
@@ -136,6 +179,14 @@ hr.LinhaHeader{
     padding: 30px 5px;
 
     border-bottom: 1px solid var(--background-light);
+
+    transition: all 0.3s ease-in-out;
+}
+
+.task:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .task:hover{
@@ -145,8 +196,6 @@ hr.LinhaHeader{
 .title{
     display: flex;
     align-items: center;
-
-
     flex: 1;
 }
 
@@ -154,11 +203,22 @@ hr.LinhaHeader{
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex: 1;
 }
 
 .actions{
     display: flex;
     justify-content: flex-end;
+}
+
+.actions a{
+    margin: 0  20px 0 10px;
+
+    transform: all .3s ease-in-out;
+}
+
+.actions a:hover{
+    transform: scale(1.45);
 }
 
 .sphere{

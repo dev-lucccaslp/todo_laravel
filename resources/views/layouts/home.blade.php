@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            logo
+            <img src="/assets/images/logo.png" alt="" srcset="">
         </div>
         <div class="content">
             <nav>
@@ -29,8 +29,12 @@
                 <section class="graph">
                     <div class="graph_header">
                         <h2>Progresso do dia</h2>
-                        <hr class="LinhaHeader">
-                        Data
+                        <div class="graph_header-line"></div>
+                        <div class="graph_header-date">
+                            <img src="/assets/images/icon-prev.png" alt="" srcset="">
+                            13 dez
+                            <img src="/assets/images/icon-next.png" alt="" srcset="">
+                        </div>
                     </div>
                     <div class="graph_header-subtitle">
                         Tarefas: <b>3/6</b>
@@ -40,7 +44,11 @@
 
                     </div>
 
-                    <p class="graph_header-task_left">Restam 3 tarefas para serem realizadas</p>
+                    <div class="tasks_left_footer">
+                        <img src="/assets/images/icon-info.png" alt="">
+                        Restam 3 tarefas para serem realizadas
+                    </div>
+
                 </section>
 
                 <section class="list">
@@ -64,24 +72,11 @@
                                 <div> Titulo da Tarefa </div>
                             </div>
                             <div class="actions">
-                                editar - excluir
+                                <a href=""><img src="/assets/images/icon-edit.png" alt="" srcset=""></a>
+                                <a href=""><img src="/assets/images/icon-delete.png" alt=""></a>
                             </div>
                         </div>
 
-                        <div class="task">
-
-                            <div class="title">
-                                <input type="checkbox" name="" id="" />
-                                <div class="task_title"> Titulo da Tarefa </div>
-                            </div>
-                            <div class="priority">
-                                <div class="sphere"></div>
-                                <div> Titulo da Tarefa </div>
-                            </div>
-                            <div class="actions">
-                                editar - excluir
-                            </div>
-                        </div>
                     </div>
                 </section>
             </main>
