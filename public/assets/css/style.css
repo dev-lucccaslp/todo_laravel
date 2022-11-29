@@ -59,6 +59,9 @@ nav{
     border-radius: 10px;
     margin-left: 10px;
 
+    cursor: pointer;
+
+    border: 0;
     transition: all 0.3s ease-in-out;
 }
 
@@ -233,3 +236,49 @@ h2{
     padding-left: 10px;
     font-weight: bold;
 }
+
+
+/*----------------Edit Tasks----------------*/
+
+#create_task_section{
+    margin: auto;
+    padding-top: 20px;
+
+
+}
+
+#create_task_section>h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputArea{
+    display: block;
+    margin: 10px;
+}
+.inputArea>label {
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.inputArea>input, .inputArea>select {
+    height: 40px;
+    width: 400px;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.inputArea>textarea{
+    height: 120px;
+    width: 400px;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+

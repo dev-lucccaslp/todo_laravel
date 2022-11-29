@@ -2,6 +2,7 @@
 
     <x-slot:btn>
         <x-button  name='Criar Tarefa' href="/task/new"> </x-button>
+
         {{-- <a href="{{route('task.create')}}" class="btn btn-primary">
             Criar Tarefa
         </a> --}}
