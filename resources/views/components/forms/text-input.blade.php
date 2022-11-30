@@ -1,3 +1,11 @@
+@props([
+    'name',
+    'label',
+    'type',
+    'required',
+    'placeholder'
+])
+
 <div class="inputArea">
     <label for="{{$name}}">
         {{$label ?? ''}}
@@ -9,9 +17,17 @@
     />
 </div>
 
-{{-- <div class="inputArea">
-    <label for="title">
-        Titulo da Task
-    </label>
-    <input id="title" name="title" required placeholder="Digie o titulo da tarefa...">
+
+{{--
+ @props([
+  'label'
+])
+<div class="inputArea">
+   <label for="{{$attributes->get('id')}}">{{$label}}</label>
+   <input {{$attributes->class(['form-control', 'is-invalid' => $errors->has($attributes->get('name'))])}} />
+   @error($attributes->get('name'))
+        <div class="alert alert-danger">
+           {{$message}}
+        </div>
+   @enderror
 </div> --}}

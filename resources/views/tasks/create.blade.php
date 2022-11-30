@@ -9,7 +9,7 @@
 
         <form>
 
-            <div class="inputArea">
+            {{-- <div class="inputArea">
                 <label for="title">
                     Titulo da Task
                 </label>
@@ -39,39 +39,41 @@
                         Descrição da tarefa
                     </label>
                     <textarea name="description" placeholder="Digete a descrição de sua tarefa..." name="" id="" cols="30" rows="10"></textarea>
-                </div>
+                </div> --}}
+
+                {{-- <x-forms.text-input type="text" name="name" id="name" label="Nome"  /> --}}
 
 
-                {{-- <x-forms.textinput
-                name="title"
-                type="text"
-                label = "Titulo da Task"
-                required = "required"
-                placeholder='Digite o titulo da tarefa'
-             />
+                    <x-forms.text-input
+                        name="title"
+                        label="Titulo da Task"
+                        required="required"
+                        placeholder='Digite o titulo da tarefa'
+                    />
 
-            <x-forms.textinput
-                type="date"
-                name="due_date"
-                label = "Data da realização"
-                placeholder="Escolha a data da tarefa"
-             />
+                    <x-forms.text-input
+                        type="date"
+                        name="due_date"
+                        label="Data da realização"
+                        placeholder="Escolha a data da tarefa"
+                    />
 
-            <x-forms.select-input
-                name="category"
-                label="Categoria"
-                placeholder="Digite o titulo da sua tarefa"
-            >
-                <option value="">TESTE</option>
-            <x-forms.select-input/>
-
-            <x-forms.text-area
-                name="description"
-                placeholder="digite a descrição"
-            /> --}}
+                    <x-forms.select-input
+                        name="category"
+                        label="Categoria"
+                        placeholder="Digite o titulo da sua tarefa"
+                    >
+                        <option value="">TESTE</option>
+                    </x-forms.select-input>
 
 
 
+
+
+                    <x-forms.text-area
+                        name="description"
+                        placeholder="digite a descrição"
+                    />
 
                 <div class="inputArea">
                     <button type="submit" class="btn btn-primary">Criar Tarefa</button>

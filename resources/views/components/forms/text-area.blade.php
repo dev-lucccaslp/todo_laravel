@@ -1,9 +1,16 @@
+@props([
+    'name',
+    'label' => null,
+    'placeholder' => null,
+    'required'
+])
+
 <div class="inputArea">
     <label for="{{$name}}" >
-       {{$label ?? ''}}
+       {{$label}}
     </label>
     <textarea
         name="{{$name}}"
-        placeholder="{{$placeholder ?? ''}}"
+        placeholder="{{$placeholder}}"
         {{empty($required) ? '' : 'required'}}></textarea>
 </div>
