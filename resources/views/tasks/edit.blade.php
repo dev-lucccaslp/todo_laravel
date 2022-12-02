@@ -1,9 +1,6 @@
 <x-layout title="Todo List: Edit">
     <x-slot:btn>
-        {{-- <x-button name="Voltar" href="/" > </x-button> --}}
-        <a href="{{route('home')}}" class="btn btn-primary">
-            Voltar a home
-        </a>
+        <x-button name="Voltar" href="/" > </x-button>
     </x-slot:btn>
 
     <section id="task_section">
@@ -11,6 +8,9 @@
 
         <form method="POST" action="{{route('task.edit_action')}}" >
             @csrf
+
+            <input type="hidden" name="id" value="{{$task->id}}">
+
             <x-forms.text-input
                 name="title"
                 label="Titulo da tarefa"
@@ -20,11 +20,12 @@
             />
 
             <x-forms.text-input
-                type="date"
+                type="datetime-local"
                 name="due_date"
                 label="Data da realização"
                 value="{{$task->due_date}}"
             />
+
 
             <x-forms.select-input
                 name="category_id"

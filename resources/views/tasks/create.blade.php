@@ -17,7 +17,7 @@
             />
 
             <x-forms.text-input
-                type="date"
+                type="datetime-local"
                 name="due_date"
                 label="Data da realização"
             />
