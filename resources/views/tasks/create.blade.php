@@ -4,81 +4,53 @@
         <x-button name="Voltar" href="/" > </x-button>
     </x-slot:btn>
 
-    <section id="create_task_section">
+    <section id="task_section">
         <h1>Criar Tarefa</h1>
 
-        <form>
+        <form method="POST" action="{{route('task.create_action')}}" >
+            @csrf
+            <x-forms.text-input
+                name="title"
+                label="Titulo da tarefa"
+                required="required"
+                placeholder='Digite o titulo da tarefa'
+            />
 
-            {{-- <div class="inputArea">
-                <label for="title">
-                    Titulo da Task
-                </label>
-                <input id="title" name="title" required placeholder="Digie o titulo da tarefa...">
-            </div>
+            <x-forms.text-input
+                type="date"
+                name="due_date"
+                label="Data da realização"
+            />
 
+            <x-forms.select-input
+                name="category_id"
+                label="Categoria(s)"
+            >
+                @foreach($categories as $category)
 
-                <div class="inputArea">
-                    <label for="title" id="due_date">
-                        Data de Realização
-                    </label>
-                    <input name="due_date" id="due_date" type="date" required placeholder="Digie o titulo da tarefa...">
-                </div>
+                    <option value="{{$category->id}}">{{$category->title}}</option>
+                @endforeach
+            </x-forms.select-input>
 
-                <div class="inputArea">
-                    <label for="title" id="category">
-                        Categoria
-                    </label>
-                    <select id="category" name="category" required>
-                        <option selected disabled value="">Selecione a categoria</option>
-                    </select>
-                </div>
+            <x-forms.text-area
+                name="description"
+                label="Descrição da tarefa"
+                placeholder="Digite a descrição da tarefa"
+            />
+                <div class="button_forms_create">
 
-
-                <div class="inputArea">
-                    <label for="title" >
-                        Descrição da tarefa
-                    </label>
-                    <textarea name="description" placeholder="Digete a descrição de sua tarefa..." name="" id="" cols="30" rows="10"></textarea>
-                </div> --}}
-
-                {{-- <x-forms.text-input type="text" name="name" id="name" label="Nome"  /> --}}
-
-
-                    <x-forms.text-input
-                        name="title"
-                        label="Titulo da Task"
-                        required="required"
-                        placeholder='Digite o titulo da tarefa'
-                    />
-
-                    <x-forms.text-input
-                        type="date"
-                        name="due_date"
-                        label="Data da realização"
-                        placeholder="Escolha a data da tarefa"
-                    />
-
-                    <x-forms.select-input
-                        name="category"
-                        label="Categoria"
-                        placeholder="Digite o titulo da sua tarefa"
+                    <x-forms.button-sr
+                        type='reset'
                     >
-                        <option value="">TESTE</option>
-                    </x-forms.select-input>
+                        Resetar
+                    </x-forms.button-sr>
 
-
-
-
-
-                    <x-forms.text-area
-                        name="description"
-                        placeholder="digite a descrição"
-                    />
-
-                <div class="inputArea">
-                    <button type="submit" class="btn btn-primary">Criar Tarefa</button>
-                </div>
-            </form>
-        </section>
-
-    </x-layout>
+                    <x-forms.button-sr
+                        type='submit'
+                      >
+                        Criar tarefa
+                    </x-forms.button-sr>
+            </div>
+        </form>
+    </section>
+</x-layout>

@@ -64,7 +64,6 @@ nav{
     border: 0;
     transition: all 0.3s ease-in-out;
 }
-
 .btn:hover {
     transform: scale(1.05);
 }
@@ -72,7 +71,29 @@ nav{
 a.btn{
   text-decoration: none;
 }
+/* Botão de reset/submit FORMS */
+.btnr{
+    padding: 20px 30px;
+    margin-right: 10px;
+    border-radius: 10px;
 
+    cursor: pointer;
+
+    border: 0;
+    transition: all 0.3s ease-in-out;
+
+    background-color: #9d8bf8;
+    color: white;
+}
+
+.btnr:hover {
+    transform: scale(1.05);
+}
+
+a.btnr{
+  text-decoration: none;
+}
+/* ------------------------------------------------------------------------------------ */
 .btn-primary {
     background-color: var(--color-primary);
     color: white;
@@ -240,45 +261,53 @@ h2{
 
 /*----------------Edit Tasks----------------*/
 
-#create_task_section{
+#task_section{
     margin: auto;
     padding-top: 20px;
 
 
 }
 
-#create_task_section>h1{
+#task_section>h1{
     text-align: center;
     margin-bottom: 20px;
 }
 
 .inputArea{
     display: block;
-    margin: 10px;
+    margin: 10px 0 20px 0;
 }
 .inputArea>label {
     display: block;
 
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .inputArea>input, .inputArea>select {
     height: 40px;
     width: 400px;
 
+    background-color: rgba(255, 255, 255, 0.5);
+
     padding: 5px 10px;
 
-    border-radius: 10px;
-    border: 1px solid #333;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .inputArea>textarea{
     height: 120px;
     width: 400px;
 
+    background-color: rgba(255, 255, 255, 0.5);
+
     padding: 5px 10px;
 
-    border-radius: 10px;
-    border: 1px solid #333;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
+.button_forms_create {
+    display: flex;
+}

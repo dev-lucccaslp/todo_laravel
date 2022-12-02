@@ -1,7 +1,8 @@
 @props([
     'name',
     'label'=> null,
-    'required'
+    'required',
+    'value' => null
 ])
 
 <div class="inputArea">
@@ -9,7 +10,7 @@
         {{$label}}
     </label>
     <select id="{{$name}}" name="{{$name}}" {{empty($required) ? '' : 'required'}}>
-        <option selected disabled value="">Selecione uma opção</option>
+        <option selected disabled value="">{{$value}}</option>
         {{$slot}}
     </select>
 </div>
