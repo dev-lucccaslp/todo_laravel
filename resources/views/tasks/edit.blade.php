@@ -11,6 +11,13 @@
 
             <input type="hidden" name="id" value="{{$task->id}}">
 
+            <x-forms.checkbox-input
+                name="is_done"
+                label="Tarefa Realizada?"
+                checked="{{$task->is_done}}"
+
+            />
+
             <x-forms.text-input
                 name="title"
                 label="Titulo da tarefa"
@@ -25,7 +32,6 @@
                 label="Data da realização"
                 value="{{$task->due_date}}"
             />
-
 
             <x-forms.select-input
                 name="category_id"

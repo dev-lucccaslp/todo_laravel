@@ -43,14 +43,9 @@ class TaskController extends Controller
     }
 
     public function edit_action(Request $request){
-
-        // "id" => "1"
-        // "title" => "t4este3"
-        // "due_date" => "2014-12-29T09:42:47"
-        // "category_id" => "2"
-        // "description" => "dasdas"
-
         $request_data= $request->only(['title','due_date','category_id','description']);
+
+        $request_data['is_done']= $request->is_done ? true : false;
 
         $task =Task::find($request ->id);
         if(!$task) {
