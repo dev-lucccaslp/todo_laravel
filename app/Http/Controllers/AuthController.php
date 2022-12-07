@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -19,7 +20,8 @@ class AuthController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        
+
+
     }
 
     public function register(Request $request) {
@@ -34,7 +36,9 @@ class AuthController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
 
-        $data= $request->only('name','email','password');
+        $data= $request->only('name','email','password');// acessando dados passados
+
+        $data['password'] = Hash::make($data['password']);// sobrescrevendo password para ser criptografado
 
         User::create($data);
 

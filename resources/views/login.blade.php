@@ -6,12 +6,13 @@
     <section id="task_section">
         <h1>Tela de Login</h1>
 
-        {{-- @if($errors->any())
+        @if($errors->any())
             <ul class="alert alert-error">
                 @foreach ( $errors->all() as $error)
                     <li>{{$error}}</li>
                 @endforeach
-            </ul> --}}
+            </ul>
+        @endif
 
         <form method="POST" action="{{route('user.login_action')}}" >
             @csrf

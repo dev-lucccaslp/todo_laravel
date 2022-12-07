@@ -7,6 +7,14 @@
     <section id="task_section">
         <h1>Tela de Registro</h1>
 
+        @if($errors->any())
+            <ul class="alert alert-error">
+                @foreach ( $errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+        
         <form method="POST" action="{{route('user.register_action')}}" >
             @csrf
             <x-forms.text-input
