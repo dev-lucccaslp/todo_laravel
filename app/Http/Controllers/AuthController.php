@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     //
     public function index(Request $request) {
+        if(Auth::check()) {
+            return redirect()->route('home');
+        }
         return view('login');
     }
 
@@ -20,11 +24,17 @@ class AuthController extends Controller
             'password' => 'required|min:6',
         ]);
 
-
+        if(Auth::attempt($validator)) {
+           return redirect()->route('home');
+        };
 
     }
 
     public function register(Request $request) {
+        if(Auth::check()) {
+            return redirect()->route('home');
+        }
+
         return view('register');
     }
 
@@ -43,6 +53,12 @@ class AuthController extends Controller
         User::create($data);
 
        return redirect(route('login'));
+    }
+
+    public function logout() {
+        Auth::logout();
+
+        return redirect(route('login'));
     }
 
 }

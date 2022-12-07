@@ -2,13 +2,14 @@
 
     <x-slot:btn>
         <x-button  name='Criar Tarefa' href="/task/new"> </x-button>
+        <x-button  name='Sair' href="/logout"> </x-button>
 
         {{-- <a href="{{route('task.create')}}" class="btn btn-primary">
             Criar Tarefa
         </a> --}}
     </x-slot:btn>
 
-
+    {{-- - {{$AuthUser->name}} --}}
     <section class="graph">
         <div class="graph_header">
             <h2>Progresso do dia</h2>
