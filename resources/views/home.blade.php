@@ -16,7 +16,7 @@
             <div class="graph_header-line"></div>
             <div class="graph_header-date">
                 <img src="/assets/images/icon-prev.png" alt="" srcset="">
-                13 dez
+                    08 de Dez{{-- {{$date_as_string}} --}}
                 <img src="/assets/images/icon-next.png" alt="" srcset="">
             </div>
         </div>
@@ -46,7 +46,7 @@
 
         <div class="task_list">
 
-            @foreach ($tasks as $task)
+            @foreach ($data as $task)
                 <x-task :data=$task/>
             @endforeach
 

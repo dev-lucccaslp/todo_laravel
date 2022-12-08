@@ -11,10 +11,24 @@ class HomeController extends Controller
     //
     public function index(Request $request) {
 
-        $tasks = Task::all()->take(4);
+        //$data = Task::all()->take(4);
+        if($request->date){
+            $filterDate = $request->date;
+        } else {
+
+            $filterDate = date('Y-m-d');
+
+        }
+
+        $data['$date_as_string'] = '08 de Dez';
+
+        $data = Task::whereDate('due_date', $filterDate)->get();
         $AuthUser = Auth::user();
 
+        // $data['tasks_count'] = $data['tasks']->count();
+        // $data['undone_tasks_count'] = $data['tasks']->where('is_done', false)->count();
 
-        return view('home', ['tasks' => $tasks, 'AuthUser' => $AuthUser]);
+        return view('home', ['data' => $data, 'AuthUser' => $AuthUser]);
     }
 }
+
