@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Task;
+
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+
+    public function update(Request $request) {
+        $task = Task::findOrFail($request->taskID);
+        $task->is_done = $request->status;
+        $task->save();
+        return ['success' => true];
+    }
+
     public function index(){
 
     }
@@ -67,6 +76,5 @@ class TaskController extends Controller
 
         return redirect(route('home'));
     }
-
 
 }

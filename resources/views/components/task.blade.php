@@ -1,7 +1,9 @@
 <div class="task">
 
     <div class="title">
-        <input type="checkbox" name="" id=""
+
+        {{-- //checked marcado = true / desmarcado = false // esta função abaixo esta na home --}}
+        <input type="checkbox" onchange="taskUpdate(this)" data-id="{{$data['id']}}"
             @if ($data && $data['is_done'])
                 checked
             @endif
